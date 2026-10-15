@@ -1,68 +1,62 @@
 <!doctype html>
 <html lang="bn">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#087f5b">
-<title>বাংলা লেখা শিখি | Bangla Writing Tutor</title>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#5b35b5"><meta name="description" content="শিশুদের বাংলা বর্ণমালা ও সংখ্যা লেখা শেখার মজার অ্যাপ">
+<link rel="manifest" href="./manifest.json">
+<title>বাংলা হাতেখড়ি — Bangla Writing Tutor</title>
 <style>
-:root{--green:#087f5b;--deep:#07543e;--mint:#e8f7ef;--ink:#18352b;--muted:#61756c;--line:#dce9e1;--paper:#fff}
-*{box-sizing:border-box}body{margin:0;background:#f4faf6;color:var(--ink);font-family:"Noto Sans Bengali","Hind Siliguri",system-ui,sans-serif}
-header{background:linear-gradient(135deg,#087f5b,#0b9a70);color:white;padding:24px 16px 28px;text-align:center}
-header .logo{font-size:34px;font-weight:900;line-height:1.2}header p{margin:8px 0 0;color:#e4fff2;font-size:15px}
-main{max-width:900px;margin:20px auto;padding:0 14px 36px}.panel{background:white;border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:16px;box-shadow:0 6px 22px #123b2410}
-h2{font-size:20px;margin:0 0 12px}.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-button{font:inherit;cursor:pointer;border:0;border-radius:12px;padding:10px 15px;background:#edf5ef;color:var(--deep);font-weight:700}
-button.active,button.primary{background:var(--green);color:white}button:focus-visible{outline:3px solid #f0b429;outline-offset:2px}
-.letters{display:grid;grid-template-columns:repeat(auto-fill,minmax(56px,1fr));gap:8px}
-.letter{font-size:28px;min-height:58px;border:1px solid var(--line);background:#fbfefc;padding:5px}.letter.active{background:var(--mint);border:2px solid var(--green);color:var(--deep)}
-.practice-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.chosen{font-size:18px;color:var(--muted)}
-#board{display:block;width:100%;height:min(58vh,390px);min-height:250px;border:2px dashed #b7d8c6;border-radius:15px;background-color:#fffefa;touch-action:none;margin:12px 0}
-.actions{display:flex;gap:8px;flex-wrap:wrap}.tip{color:var(--muted);font-size:14px;line-height:1.65;margin:10px 0 0}
-.progress{height:8px;background:#e7f1ea;border-radius:99px;overflow:hidden;margin-top:10px}.progress span{display:block;height:100%;width:0;background:#12a36f;transition:width .2s}
-footer{text-align:center;color:var(--muted);font-size:13px;padding:10px}
-@media(max-width:480px){header{padding:20px 12px}.panel{padding:14px}.letter{font-size:25px;min-height:52px}main{margin-top:14px}}
+:root{--purple:#5b35b5;--purple2:#7b55d9;--pink:#ff729f;--yellow:#ffd45c;--mint:#dff8e9;--ink:#29233b;--muted:#746e84;--bg:#f7f4ff;--card:#fff;--line:#e9e2fa}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans Bengali","Hind Siliguri",system-ui,sans-serif}button{font:inherit;cursor:pointer;border:0;touch-action:manipulation}header{background:linear-gradient(135deg,#4d2aab,#8157dc);color:white;padding:20px 16px 25px;border-radius:0 0 28px 28px;text-align:center}header .brand{font-size:28px;font-weight:900}header p{margin:5px 0 0;color:#eee5ff;font-size:14px}.mascot{font-size:34px}
+main{max-width:850px;margin:16px auto;padding:0 12px 32px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px;margin-bottom:14px;box-shadow:0 5px 18px #4d2aab0b}.welcome{display:flex;align-items:center;gap:12px;background:#fff6d8;border-color:#ffedab}.welcome .emoji{font-size:34px}.welcome p{margin:3px 0;font-size:14px;color:#63552b}.section-title{font-size:18px;font-weight:900;margin:0 0 12px}.category-row{display:flex;gap:8px;overflow:auto;padding-bottom:4px}.category{white-space:nowrap;border-radius:13px;padding:10px 14px;background:#f0ebfc;color:#50319d;font-weight:800}.category.active{background:var(--purple);color:white}.letter-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:7px;margin-top:12px}.letter{min-width:0;min-height:50px;border-radius:13px;background:#faf8ff;border:1px solid var(--line);font-size:25px;font-weight:700;color:#4d3985}.letter.active{background:#eee6ff;border:2px solid var(--purple);color:var(--purple);box-shadow:0 3px 0 #d4c3ff}
+.learn-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.sub{font-size:13px;color:var(--muted)}.big-letter{font-size:24px;font-weight:900}.stage{position:relative;margin:12px 0;border-radius:18px;overflow:hidden;border:2px solid #eee7ff;background:repeating-linear-gradient(0deg,#fff 0px,#fff 43px,#f0eaff 44px,#fff 45px);height:270px;touch-action:none}.stage canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:none}.stage-label{position:absolute;right:10px;top:8px;font-size:11px;color:#a9a0ba;background:#ffffffbd;padding:3px 7px;border-radius:8px;pointer-events:none}
+.tools{display:flex;flex-wrap:wrap;gap:7px}.tool{border-radius:12px;padding:10px 12px;background:#f0ebfc;color:#50319d;font-weight:800}.tool.primary{background:var(--purple);color:white}.tool.pink{background:#ffe5ee;color:#a62c57}.tool:focus-visible,.letter:focus-visible,.category:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}.colors{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin:12px 0}.color{width:30px;height:30px;border-radius:50%;border:3px solid white;box-shadow:0 0 0 1px #d8d1e5}.color.active{box-shadow:0 0 0 3px var(--purple)}.small-label{font-size:13px;color:var(--muted);font-weight:700}.bottom-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.bottom-actions button{padding:12px 8px;border-radius:13px;font-weight:800}.primary{background:var(--purple);color:white}.secondary{background:#f0ebfc;color:#50319d}.progress-line{height:7px;background:#eee8fb;border-radius:9px;overflow:hidden;margin-top:12px}.progress-line span{display:block;width:0;height:100%;background:linear-gradient(90deg,#ff729f,#7b55d9);transition:width .2s}.tip{font-size:13px;line-height:1.7;color:var(--muted);margin:10px 0 0}.pill{font-size:12px;background:#e5faec;color:#24764c;padding:5px 9px;border-radius:99px;font-weight:800}footer{text-align:center;color:#958ba9;font-size:12px;padding:4px 12px 20px}
+@media(min-width:650px){.letter-grid{grid-template-columns:repeat(8,minmax(0,1fr))}.stage{height:310px}.card{padding:19px}}@media(max-width:380px){.letter-grid{grid-template-columns:repeat(5,minmax(0,1fr))}.stage{height:235px}.brand{font-size:24px!important}}
 </style>
 </head>
 <body>
-<header><div class="logo">✍️ বাংলা লেখা শিখি</div><p>অক্ষর চিনুন • দেখে লিখুন • নিজে অনুশীলন করুন</p></header>
+<header><div class="mascot">🌈 ✍️ ⭐</div><div class="brand">বাংলা হাতেখড়ি</div><p>দেখে দেখে লিখি, আনন্দে বাংলা শিখি!</p></header>
 <main>
-<section class="panel">
-<h2>১. অক্ষর বেছে নিন</h2>
-<div class="tabs"><button class="active" data-kind="vowel">স্বরবর্ণ</button><button data-kind="consonant">ব্যঞ্জনবর্ণ</button><button data-kind="digits">বাংলা সংখ্যা</button></div>
-<div class="letters" id="letters" aria-label="অক্ষর নির্বাচন"></div>
+<section class="card welcome"><div class="emoji">🧒📚</div><div><strong>চলো, অক্ষর শিখি!</strong><p>অক্ষর বেছে নাও, নমুনা দেখো, তারপর আঙুল দিয়ে লেখো।</p></div></section>
+<section class="card">
+<h2 class="section-title">১. কী শিখতে চাও?</h2>
+<div class="category-row"><button class="category active" data-kind="vowel">🌼 স্বরবর্ণ</button><button class="category" data-kind="consonant">🦋 ব্যঞ্জনবর্ণ</button><button class="category" data-kind="digits">🔢 সংখ্যা</button><button class="category" data-kind="words">🍎 সহজ শব্দ</button></div>
+<div class="letter-grid" id="letterGrid"></div>
 </section>
-<section class="panel">
-<div class="practice-head"><div><h2>২. অক্ষরটি লিখে অনুশীলন করুন</h2><div class="chosen" id="chosen">নির্বাচিত অক্ষর: অ</div></div><button id="next" class="primary">পরের অক্ষর →</button></div>
-<canvas id="board" aria-label="এখানে আঙুল বা মাউস দিয়ে লিখুন"></canvas>
-<div class="actions"><button class="primary" id="clear">আবার লিখুন ↻</button><button id="guide">নমুনা দেখান / লুকান</button></div>
-<div class="progress"><span id="progress"></span></div>
-<p class="tip">পরামর্শ: মোবাইলে আঙুল দিয়ে বা কম্পিউটারে মাউস দিয়ে অক্ষরটি আঁকুন। সব লেখা শুধু এই অনুশীলনের বোর্ডে থাকে—কোনো সার্ভারে পাঠানো হয় না।</p>
+<section class="card">
+<div class="learn-top"><div><div class="section-title" style="margin-bottom:3px">২. দেখে লিখে অনুশীলন</div><div class="sub" id="letterName">নির্বাচিত অক্ষর: অ</div></div><span class="pill" id="modePill">নমুনা চালু</span></div>
+<div class="stage"><canvas id="board" aria-label="এখানে আঙুল বা মাউস দিয়ে লিখুন"></canvas><div class="stage-label">এখানে লিখো ✍️</div></div>
+<div class="tools"><button class="tool primary" id="preview">▶ লেখার নমুনা</button><button class="tool" id="toggleGuide">👁 নমুনা লুকাও</button><button class="tool pink" id="speak">🔊 উচ্চারণ</button></div>
+<div class="colors"><span class="small-label">🖍️ রং:</span><button class="color active" data-color="#5b35b5" style="background:#5b35b5" aria-label="বেগুনি"></button><button class="color" data-color="#f04478" style="background:#f04478" aria-label="গোলাপি"></button><button class="color" data-color="#159b68" style="background:#159b68" aria-label="সবুজ"></button><button class="color" data-color="#2879e8" style="background:#2879e8" aria-label="নীল"></button><button class="color" data-color="#f29b16" style="background:#f29b16" aria-label="কমলা"></button><button class="tool" id="eraser">🧽 ইরেজার</button></div>
+<div class="bottom-actions"><button class="secondary" id="clear">↻ আবার লিখি</button><button class="primary" id="next">পরেরটি ➜</button></div>
+<div class="progress-line"><span id="progress"></span></div><p class="tip" id="tip">প্রথমে নমুনা দেখে অক্ষরটি আঁকার চেষ্টা করো। নমুনা লুকিয়ে নিজে নিজে লেখো।</p>
 </section>
-<section class="panel"><h2>৩. ছোট্ট শেখার কৌশল</h2><p class="tip">প্রথমে অক্ষরটি ভালো করে দেখুন। তারপর নমুনার ওপর ধীরে ধীরে লিখুন। শেষে নমুনা লুকিয়ে নিজে লেখার চেষ্টা করুন। প্রতিদিন ৫–১০ মিনিট অনুশীলন করলে হাতের লেখা আরও সুন্দর হতে সাহায্য করবে।</p></section>
-</main><footer>Bangla Writing Tutor · বাংলা শেখা হোক আনন্দের</footer>
+<section class="card"><h2 class="section-title">🏆 আমার শেখা</h2><div><strong id="learned">০টি অক্ষর অনুশীলন</strong><p class="tip">প্রতিটি অক্ষর অনুশীলন করলে এখানে তোমার অগ্রগতি দেখা যাবে। অগ্রগতি এই ডিভাইসেই সংরক্ষিত থাকবে।</p></div></section>
+</main><footer>বাংলা হাতেখড়ি · শিশু ও নতুন শিক্ষার্থীদের জন্য 💜</footer>
 <script>
-const groups={
- vowel:[...'অআইঈউঊঋএঐওঔ'],
- consonant:[...'কখগঘঙচছজঝঞটঠডঢণতথদধনপফবভমযরলশষসহড়ঢ়য়'],
- digits:[...'০১২৩৪৫৬৭৮৯']
-};
-let kind='vowel', selected=0, showGuide=true, strokes=0;
-const lettersEl=document.getElementById('letters'), chosenEl=document.getElementById('chosen'), board=document.getElementById('board'), ctx=board.getContext('2d');
-function current(){return groups[kind][selected]}
-function drawLetters(){lettersEl.innerHTML='';groups[kind].forEach((letter,i)=>{const b=document.createElement('button');b.className='letter'+(i===selected?' active':'');b.textContent=letter;b.setAttribute('aria-label','অক্ষর '+letter);b.onclick=()=>{selected=i;render()};lettersEl.appendChild(b)})}
-function fitCanvas(){const dpr=window.devicePixelRatio||1,rect=board.getBoundingClientRect();board.width=Math.round(rect.width*dpr);board.height=Math.round(rect.height*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);paint()}
-function paint(){const w=board.clientWidth,h=board.clientHeight;ctx.clearRect(0,0,w,h);ctx.fillStyle='#fffefa';ctx.fillRect(0,0,w,h);ctx.strokeStyle='#e5eee7';ctx.lineWidth=1;for(let y=45;y<h;y+=45){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke()}if(showGuide){ctx.save();ctx.globalAlpha=.20;ctx.fillStyle='#16845c';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='bold '+Math.min(h*.62,w*.55)+'px "Noto Sans Bengali","Hind Siliguri",sans-serif';ctx.fillText(current(),w/2,h/2+4);ctx.restore()}}
-function render(){drawLetters();chosenEl.textContent='নির্বাচিত অক্ষর: '+current();document.getElementById('progress').style.width='0%';strokes=0;fitCanvas()}
-document.querySelectorAll('[data-kind]').forEach(b=>b.onclick=()=>{kind=b.dataset.kind;selected=0;document.querySelectorAll('[data-kind]').forEach(x=>x.classList.toggle('active',x===b));render()});
-document.getElementById('next').onclick=()=>{selected=(selected+1)%groups[kind].length;render()};
-document.getElementById('clear').onclick=()=>{strokes=0;paint();document.getElementById('progress').style.width='0%'};
-document.getElementById('guide').onclick=()=>{showGuide=!showGuide;paint()};
-let drawing=false,last=null;
-function point(e){const r=board.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
-board.addEventListener('pointerdown',e=>{drawing=true;last=point(e);board.setPointerCapture(e.pointerId);ctx.beginPath();ctx.moveTo(last.x,last.y);ctx.strokeStyle='#087f5b';ctx.lineWidth=6;ctx.lineCap='round';ctx.lineJoin='round'});
-board.addEventListener('pointermove',e=>{if(!drawing)return;const p=point(e);ctx.lineTo(p.x,p.y);ctx.stroke();last=p;strokes++;document.getElementById('progress').style.width=Math.min(100,strokes/3)+'%'});
-function stop(){drawing=false;last=null}board.addEventListener('pointerup',stop);board.addEventListener('pointercancel',stop);board.addEventListener('lostpointercapture',stop);
-window.addEventListener('resize',fitCanvas);render();
+const sets={vowel:['অ','আ','ই','ঈ','উ','ঊ','ঋ','এ','ঐ','ও','ঔ'],consonant:['ক','খ','গ','ঘ','ঙ','চ','ছ','জ','ঝ','ঞ','ট','ঠ','ড','ঢ','ণ','ত','থ','দ','ধ','ন','প','ফ','ব','ভ','ম','য','র','ল','শ','ষ','স','হ','ড়','ঢ়','য়'],digits:['০','১','২','৩','৪','৫','৬','৭','৮','৯'],words:['মা','বাবা','আম','জল','ফুল','বই','ঘর','মাছ']};
+const names={vowel:'স্বরবর্ণ',consonant:'ব্যঞ্জনবর্ণ',digits:'বাংলা সংখ্যা',words:'সহজ শব্দ'};
+let kind='vowel',idx=0,guide=true,color='#5b35b5',erasing=false,drawn=0,previewTimer=null;
+const grid=document.getElementById('letterGrid'),canvas=document.getElementById('board'),ctx=canvas.getContext('2d');
+const current=()=>sets[kind][idx]||sets.vowel[0];
+function fit(){const r=canvas.getBoundingClientRect(),d=window.devicePixelRatio||1;canvas.width=Math.max(1,Math.round(r.width*d));canvas.height=Math.max(1,Math.round(r.height*d));ctx.setTransform(d,0,0,d,0,0);paint()}
+function paint(){const w=canvas.clientWidth,h=canvas.clientHeight;ctx.clearRect(0,0,w,h);if(guide){ctx.save();ctx.globalAlpha=.22;ctx.fillStyle='#7150b7';ctx.textAlign='center';ctx.textBaseline='middle';ctx.font='bold '+Math.min(h*.65,w/(current().length||1)*1.25)+'px "Noto Sans Bengali","Hind Siliguri",sans-serif';ctx.fillText(current(),w/2,h/2+5);ctx.restore()}}
+function render(){grid.innerHTML='';sets[kind].forEach((ch,i)=>{const b=document.createElement('button');b.className='letter'+(i===idx?' active':'');b.textContent=ch;b.setAttribute('aria-label',ch+' বেছে নিন');b.onclick=()=>{idx=i;render()};grid.appendChild(b)});document.getElementById('letterName').textContent=names[kind]+' · '+current();document.getElementById('modePill').textContent=guide?'নমুনা চালু':'নিজে লেখো';document.getElementById('toggleGuide').textContent=guide?'👁 নমুনা লুকাও':'👁 নমুনা দেখাও';document.getElementById('progress').style.width='0%';drawn=0;paint();updateLearned()}
+function updateLearned(){let a=[];try{a=JSON.parse(localStorage.getItem('banglaTutorLearned')||'[]')}catch(e){}document.getElementById('learned').textContent=(a.length.toLocaleString('bn-BD'))+'টি অক্ষর অনুশীলন'}
+document.querySelectorAll('[data-kind]').forEach(b=>b.addEventListener('click',()=>{kind=b.dataset.kind;idx=0;document.querySelectorAll('[data-kind]').forEach(x=>x.classList.toggle('active',x===b));render()}));
+document.querySelectorAll('[data-color]').forEach(b=>b.addEventListener('click',()=>{color=b.dataset.color;erasing=false;document.querySelectorAll('[data-color]').forEach(x=>x.classList.toggle('active',x===b));document.getElementById('eraser').classList.remove('primary')}));
+document.getElementById('eraser').onclick=()=>{erasing=!erasing;document.getElementById('eraser').classList.toggle('primary',erasing)};
+document.getElementById('toggleGuide').onclick=()=>{guide=!guide;render()};
+document.getElementById('clear').onclick=()=>{drawn=0;paint();document.getElementById('progress').style.width='0%'};
+document.getElementById('next').onclick=()=>{idx=(idx+1)%sets[kind].length;render()};
+document.getElementById('speak').onclick=()=>{if(!('speechSynthesis'in window)){alert('আপনার ব্রাউজারে উচ্চারণ শোনার সুবিধা নেই।');return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(current());u.lang='bn-BD';u.rate=.72;speechSynthesis.speak(u)};
+document.getElementById('preview').onclick=()=>{guide=true;render();const pill=document.getElementById('modePill');pill.textContent='✨ নমুনা দেখুন';setTimeout(()=>{if(pill.isConnected)pill.textContent=guide?'নমুনা চালু':'নিজে লেখো'},1800)};
+let down=false,last=null;
+function pos(e){const r=canvas.getBoundingClientRect();return{x:e.clientX-r.left,y:e.clientY-r.top}}
+canvas.addEventListener('pointerdown',e=>{down=true;canvas.setPointerCapture(e.pointerId);last=pos(e);ctx.beginPath();ctx.moveTo(last.x,last.y);ctx.lineCap='round';ctx.lineJoin='round';ctx.lineWidth=7;ctx.strokeStyle=erasing?'#ffffff':color});
+canvas.addEventListener('pointermove',e=>{if(!down)return;const p=pos(e);ctx.lineTo(p.x,p.y);ctx.stroke();last=p;drawn++;document.getElementById('progress').style.width=Math.min(100,drawn*1.3)+'%';if(drawn>8){try{let a=JSON.parse(localStorage.getItem('banglaTutorLearned')||'[]');if(!a.includes(kind+':'+current())){a.push(kind+':'+current());localStorage.setItem('banglaTutorLearned',JSON.stringify(a));updateLearned()}}catch(err){}}});
+function stop(){down=false;last=null}canvas.addEventListener('pointerup',stop);canvas.addEventListener('pointercancel',stop);canvas.addEventListener('lostpointercapture',stop);
+if('serviceWorker'in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+window.addEventListener('resize',fit);render();fit();
 </script>
 </body></html>
