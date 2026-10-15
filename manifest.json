@@ -1,0 +1,11 @@
+{
+  "name": "বাংলা হাতেখড়ি — Bangla Writing Tutor",
+  "short_name": "বাংলা হাতেখড়ি",
+  "description": "বাংলা বর্ণমালা ও সংখ্যা লেখার অনুশীলন",
+  "lang": "bn",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f4ff",
+  "theme_color": "#5b35b5"
+}
